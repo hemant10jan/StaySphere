@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+StaySphere is a platform offering vacation rentals, designed to provide an exceptional experience for both hosts and guests, featuring robust search filters and personalized recommendations.
 
-## Getting Started
+## Features
 
-First, run the development server:
+- Authentication Integration: We've integrated multiple authentication methods, including Google,   GitHub, and standard username/password login, providing flexibility and ease of access for users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Host Property Management: Hosts can easily add their properties, complete with images, descriptions, and all necessary details, to ensure a smooth listing experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Property Reservation: Guests can browse and reserve properties directly through the platform, offering a seamless booking experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Advanced Search Filters: We've implemented powerful search filters that allow guests to find properties based on categories, dates, and the number of guests, making the search process quick and efficient.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- Frontend: For the frontend, I used Next.js with TypeScript to build a scalable and efficient user interface. For UI design and styling, I integrated Tailwind CSS which provides flexible and responsive layout.
 
-To learn more about Next.js, take a look at the following resources:
+- Backend: The backend is built with Next.js, using Prisma ORM for seamless, type-safe interaction with the MongoDB database. Prisma ensures smooth and reliable database management with type safety.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- User Authentication: I implemented Google and GitHub authentication using the NextAuth.js library, providing a secure and easy login process for users.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Form Handling: For form handling, I utilized React Hook Form, a flexible and performant library that simplifies form management and validation.
 
-## Deploy on Vercel
+- Image Storage: To manage and store images efficiently, I integrated Cloudinary, a cloud-based service for uploading, storing, and delivering images.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
