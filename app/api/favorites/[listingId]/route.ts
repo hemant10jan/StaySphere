@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import prisma from "@/app/libs/prismadb";
 
-interface IParams {
-  listingId?: string;
-}
+// interface IParams {
+//   listingId?: string;
+// }
 
-export async function POST(request: Request, { params }: { params: Record<string,string> }) {
+export async function POST(request: Request, { params }: { params: Promise<{listingId:string}> }) {
   const currentUser = await getCurrentUser();
   if (!currentUser) return NextResponse.error();
-  const { listingId } = params;
+  const listingId = (await params).listingId
   if (!listingId || typeof listingId !== "string") {
     throw new Error("Invalid listingId");
   }
@@ -32,11 +32,11 @@ export async function POST(request: Request, { params }: { params: Record<string
 
 export async function DELETE(
   request: Request,
-  { params }: { params: IParams }
+  { params }: { params: Promise<{listingId:string}> }
 ) {
   const currentUser = await getCurrentUser();
   if (!currentUser) return NextResponse.error();
-  const { listingId } = params;
+  const listingId = (await params).listingId
   if (!listingId || typeof listingId !== "string") {
     throw new Error("Invalid listingId");
   }
