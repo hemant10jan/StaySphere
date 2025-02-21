@@ -5,13 +5,13 @@ import ListingClient from './ListingClient'
 import getCurrentUser from '@/app/actions/getCurrentUser'
 import getReservations from '@/app/actions/getReservations'
 
-interface Iparams{
-    listingId?:string
-}
+// interface Iparams{
+//     listingId?:string
+// }
 
-async function ListingPage({params} : {params : Iparams}) {
-  const listing =await getListingById(params)
-  const reservations=await getReservations(params)
+async function ListingPage({params} : {params : Promise<{listingId:string}>} ) {
+  const listing =await getListingById((await params))
+  const reservations=await getReservations((await params))
   const currentUser=await getCurrentUser()
 
 
