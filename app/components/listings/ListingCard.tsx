@@ -23,7 +23,6 @@ interface ListingCardProps{
 function ListingCard({data,reservation,onAction,disabled,actionLabel,actionId="",currentUser} : ListingCardProps) {
     const router=useRouter()
     const {getByValue} = useCountries()
-    console.log("->"+data.imageSrc)
 
     const location=getByValue(data.locationValue)
 
