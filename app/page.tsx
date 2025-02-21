@@ -5,14 +5,14 @@ import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
 
 interface HomeProps{
-  searchParams: IListingsParams
+  searchParams: Promise<IListingsParams>
 }
 
 const Home = async ({searchParams} : HomeProps) => {
-  const currentUser=await getCurrentUser()
-  const listings=await getListings(searchParams);
+  const resolvedSearchParams = await searchParams;
 
-  console.log("mlm",searchParams)
+  const currentUser=await getCurrentUser()
+  const listings=await getListings(resolvedSearchParams);
 
   if (listings.length === 0) {
     return <EmptyState showReset />;
